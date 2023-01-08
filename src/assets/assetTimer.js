@@ -1,2 +1,2 @@
-export const min = 2
-export const sec = 0
+export const min = 0
+export const sec = 2

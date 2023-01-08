@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setWinAuction} from "../redux/slice/timerSlice";
 
 export const Person = ({obj}) => {
+
     const dispatch = useDispatch()
     const {minutes, seconds} = useSelector(state => state.timer)
 

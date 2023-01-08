@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {takeMinutes, takeSeconds, visible} from "../redux/slice/timerSlice";
+import {setWinAuction, takeMinutes, takeSeconds, visible} from "../redux/slice/timerSlice";
 import {min, sec} from "../assets/assetTimer";
 
 export const Timer = () => {
@@ -10,6 +10,7 @@ export const Timer = () => {
 
     useEffect(() => {
         if (value) {
+            dispatch(setWinAuction(''))
             const countDate = new Date('May 30, 2020').getTime()
             const newDate = new Date('May 30, 2020').setMinutes(minutes, seconds)
             let distance = newDate - countDate
@@ -26,7 +27,6 @@ export const Timer = () => {
                         alert('никто не делал ставки')
                     }
                 } else {
-
                     dispatch(takeMinutes(minute))
                     dispatch(takeSeconds(second))
                 }
