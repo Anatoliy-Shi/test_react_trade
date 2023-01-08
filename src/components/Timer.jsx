@@ -10,7 +10,6 @@ export const Timer = () => {
 
     useEffect(() => {
         if (value) {
-            dispatch(setWinAuction(''))
             const countDate = new Date('May 30, 2020').getTime()
             const newDate = new Date('May 30, 2020').setMinutes(minutes, seconds)
             let distance = newDate - countDate
@@ -26,12 +25,12 @@ export const Timer = () => {
                     } else {
                         alert('никто не делал ставки')
                     }
+                    dispatch(setWinAuction(''))
                 } else {
                     dispatch(takeMinutes(minute))
                     dispatch(takeSeconds(second))
                 }
             }, 1000)
-
             return () => {
                 clearInterval(interval)
             }
